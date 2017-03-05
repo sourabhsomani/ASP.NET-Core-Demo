@@ -1,0 +1,27 @@
+﻿@model IEnumerable<FirstApplication.Models.Item>
+
+<div class="row">
+    <div class="col-lg-12">
+        <h3>Item List</h3>
+    </div>
+</div>
+
+<div class="row text-center">
+    @foreach (var item in Model)
+    {
+        <div class="col-md-3 col-sm-6 hero-feature">
+            <div class="thumbnail">
+                <img src="@item.ImageUrl" alt="@item.ItemName" width="800" height="500">
+                <div class="caption">
+                    <h3>@item.ItemName</h3>
+                    <p>@item.Category.CategoryName</p>
+                    <p>@item.Price.ToString("C")</p>
+                    <p>@item.ShortDescription</p>
+                    <p>
+                        <a href="#" class="btn btn-primary">Buy Now!</a> <a href="#" class="btn btn-default">More Info</a>
+                    </p>
+                </div>
+            </div>
+        </div>    
+    }
+</div>
